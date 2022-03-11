@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StoreDTO {
+	private int id; // store_id
 	private String memId; // mem_id
 	private String name; // store_name
 	private int type; // store_type
