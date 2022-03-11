@@ -14,10 +14,10 @@ import lombok.NoArgsConstructor;
 public class OutproductDTO {
 	private int id; // out_id '일련번호'
 	private String memId;	// mem_id
-	private LocalDate date; // get_date
-	private int num;	// get_num
-	private String client;	// get_client
-	private LocalDateTime regdate;	// get_regdate
+	private LocalDate date; // out_date
+	private int num;	// out_num
+	private String client;	// out_client
+	private LocalDateTime regdate;	// out_regdate
 	
 	public String getRegdate() {
 		if (this.regdate == null) {
@@ -25,4 +25,5 @@ public class OutproductDTO {
 		}
 		return this.regdate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 	}
+	
 }

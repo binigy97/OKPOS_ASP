@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.okpos.asp.domain.productMng.ProductMngDAO">
+	<select id="selectAllProductByCode" resultType="com.okpos.asp.domain.productMng.ProductDTO">
+		SELECT
+			prod_code code,
+			mem_id memId,
+			prod_name name,
+			prod_money money,
+			prod_num num
+		FROM
+			product
+		WHERE
+			prod_code = #{code} and mem_id = #{memId}
+	</select>
+	
+	<insert id="insertProduct" flushCache="true" parameterType="com.okpos.asp.domain.productMng.ProductDTO">
+		INSERT INTO
+			product
+		VALUES (
+			#{code}, #{memId}, #{name}, #{money}, #{num}
+		)
+	</insert>
+	
+	<update id="updateProduct" flushCache="true">
+		UPDATE
+			product
+		SET
+			prod_code = #{code},
+			prod_money = #{money},
+			prod_num = #{num}
+		WHERE
+			mem_id = #{memId} and prod_code = #{code}
+	</update>
+	
+	<delete id="deleteProduct" flushCache="true">
+		DELETE FROM
+			product
+		WHERE
+			mem_id = #{memId} and prod_code = #{code}
+	</delete>
+	
+	<select id="selectAllPosorderByMemId" resultType="com.okpos.asp.domain.productMng.ProductDTO">
+		SELECT
+			prod_code code,
+			mem_id memId,
+			prod_name name,
+			prod_money money,
+			prod_num num
+		FROM
+			product
+		WHERE
+			mem_id = #{memId}
+	</select>
+	
+	<select id="selectAllPosorderById" resultType="com.okpos.asp.domain.productMng.OrderDTO">
+		SELECT
+			p.prod_code		code,
+			p.mem_id		memId,
+			p.prod_name		name,
+			p.prod_money 	money,
+			p.prod_num 		prodNum,
+			o.posOrder_id 	orderId,
+			o.posOrder_num 	orderNum,
+			o.posOrder_regdate 		orderRegdate,
+			o.posOrder_returnNum 	returnNum,
+			g.get_id 		getId,
+			g.get_date 		getDate,
+			g.get_num 		getNum,
+			g.get_vendor 	vendor,
+			g.get_regdate 	getRegdate,
+			out.out_id 		outId,
+			out.out_date 	outDate,
+			out.out_num 	outNnum,
+			out.out_client 	client,
+			out.out_regdate outRegdate
+		FROM
+			product p, posOrder o, getProduct g, outProduct out
+		WHERE
+			o.posOrder_id = #{id}
+	</select>
+	
+	<update id="updatePosorderForReturnNum" flushCache="true">
+		UPDATE
+			posOrder
+		SET
+			posOrder_returnNum = #{returnNum}
+		WHERE
+			 posOrder_id = #{id}
+	</update>
+	
+	<select id="selectGetprodById" resultType="com.okpos.asp.domain.productMng.GetproductDTO">
+		SELECT
+			get_id		id,
+			mem_id		memId,
+			get_date	date,
+			get_num		num,
+			get_vendor	vendor,
+			get_regdate	regdate
+		FROM
+			getProduct
+		WHERE
+			get_id = ${id}
+	</select>
+	
+	<insert id="insertGetprod" flushCache="true" parameterType="com.okpos.asp.domain.productMng.GetproductDTO"
+	useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO
+			getProduct(mem_id, get_date, get_num, get_vendor, get_regdate)
+		VALUES (
+			mem_id = #{memId},
+			get_date = #{date},
+			get_num = #{num},
+			get_vendor = #{vendor},
+			get_regdate = now()
+		)
+	</insert>
+	
+	<update id="updateGetprod" flushCache="true">
+		UPDATE
+			getProduct
+		SET
+			get_date = #{date},
+			get_num = #{num},
+			get_vendor = #{vendor}
+		WHERE
+			get_id = #{id}
+	</update>
+	
+	<delete id="deleteGetprod" flushCache="true">
+		DELETE FROM
+			getProduct
+		WHERE
+			get_id = #{id}
+	</delete>
+	
+	<select id="selectOutprodById" resultType="com.okpos.asp.domain.productMng.OutproductDTO">
+		SELECT
+			out_id		id,
+			mem_id		memId,
+			out_date	date,
+			out_num		num,
+			out_client	client,
+			out_regdate	regdate
+		FROM
+			outProduct
+		WHERE
+			out_id = #{id}
+	</select>
+	
+	<insert id="insertOutprod" flushCache="true" parameterType="com.okpos.asp.domain.productMng.OutproductDTO"
+	useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO
+			outProduct(mem_id, out_date, out_num, out_vendor, out_regdate)
+		VALUES (
+			mem_id = #{memId},
+			out_date = #{date},
+			out_num = #{num},
+			out_client = #{client},
+			out_regdate = #{regdate}
+		)
+	</insert>
+	
+	<update id="updateOutprod" flushCache="true">
+		UPDATE
+			outProduct
+		SET
+			out_date = #{date},
+			out_num = #{num},
+			out_client = #{client},
+		WHERE
+			out_id = #{id}
+	</update>
+	
+	<delete id="deleteOutprod" flushCache="true">
+		DELETE FROM
+			outProduct
+		WHERE
+			out_id = #{id}
+	</delete>
+</mapper>

@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class PosorderDTO {
 	private int orderId; // posOrder_id
 	private String memId; // mem_id
-	private String code; // pod_code
+	private String code; // prod_code
 	private int num; // posOrder_num
 	private LocalDateTime regdate; // posOrder_regdate
 	private int returnNum; // posOrder_returnNum

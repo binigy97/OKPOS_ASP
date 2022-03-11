@@ -34,9 +34,11 @@ CREATE TABLE storeMember(
 -- 보유상품 테이블
 CREATE TABLE product(
 	prod_code varchar(10) PRIMARY KEY COMMENT '상품코드',
+	mem_id varchar(100) NOT NULL COMMENT '매장주인',
 	prod_name varchar(30) NOT NULL COMMENT '상품명',
 	prod_money int NOT NULL COMMENT '금액',
-	prod_num int NOT NULL COMMENT '재고'
+	prod_num int NOT NULL COMMENT '재고',
+	FOREIGN KEY(mem_id) REFERENCES posMember(mem_id) ON DELETE CASCADE
 );
 
 -- 시스템 전용 게시판 테이블

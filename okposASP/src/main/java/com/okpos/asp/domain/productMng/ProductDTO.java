@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ProductDTO {
 	private String code; // prod_code
+	private String memId; // mem_id
 	private String name; // prod_name
 	private int money; // prod_moeny
 	private int num; // prod_num
