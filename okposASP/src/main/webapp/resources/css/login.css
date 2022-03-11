@@ -1,0 +1,65 @@
+ul {
+    margin: 0;
+    padding: 0;
+}
+/* 로그인폼 위치 조정 */
+.loginWrap {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 255px;
+    /* border: 1px solid gray; */
+}
+/* 로고 */
+.login-header img {
+    width: 145px;
+}
+.login-header li:nth-child(2) {
+    color: darkgray;
+    font-size: 15px;
+    font-weight: bold;
+}
+.login-header li:last-child {
+    color: gray;
+    font-size: 20px;
+    font-weight: bold;
+}
+/* 아이디, 패스워드 입력칸 */
+form[name="login"] > ul > li:first-child {
+    vertical-align: middle;
+    padding-right: 10px;
+}
+form[name="login"] > ul > li:first-child > input {
+    display: block;
+    height: 27px;
+    text-align: center;
+}
+form[name="login"] > ul > li:first-child > input:first-child { /* 아이디 */
+    margin-bottom: 3px;
+}
+/* 로그인 버튼 */
+form[name="login"] > ul > li:last-child {
+    border: 1px solid #679241;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #7eaf52, #8fc461);
+}
+form[name="login"] input[type="submit"] {
+    margin: 1px;
+    width: 65px;
+    height: 65px;
+    color: #fff;
+    font-size: medium;
+    font-weight: bold;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px;
+    background-color: #ffffff00;
+}
+/* 카피라이터 */
+.copyright {
+    margin-top: 10px;
+    padding-bottom: 3px;
+    color: #fff;
+    font-size: small;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #bbb;
+}
