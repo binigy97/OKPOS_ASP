@@ -1,0 +1,61 @@
+:root {
+	--danger: #cb2916;
+	--orange: #ff8533;
+	--greentea: #55a518;
+}
+
+ul.collapse-list {
+	margin: 0;
+	padding: 0;
+    list-style: none;
+}
+.collapse-list > li {
+    display: inline-block;
+}
+
+.table {
+	display: table;
+}
+.table-row {
+	display: table-row;	
+}
+.table-cell {
+	display: table-cell;
+}
+.vertical-align-middle {
+	vertical-align: middle;
+}
+
+.btn {
+	padding: 5px 10px;
+	font-size: small;
+	color: black;
+	border: 1px solid gray;
+	border-radius: 3px;
+	background-color: #fff;
+}
+.btn-gradient-black {
+	color: white;
+	border: 1px solid darkgray;
+	background: linear-gradient(to bottom, #888, #333);
+}
+.btn-gradient-lightgray {
+	color: gray;
+	border: 1px solid darkgray;
+	background: linear-gradient(to bottom, white, #dbdbdb);
+}
+.btn-gradient-danger {
+	color: white;
+	border: 1px solid #cb2916;
+	background: linear-gradient(to bottom, #fa8772, #df3023);
+}
+.btn-gradient-orange {
+	color: white;
+	border: 1px solid #ff8533;
+	background: linear-gradient(to bottom, #ffbf83, #ff816b);
+}
+.btn-gradient-greentea {
+	color: white;
+	border: 1px solid #53a019;
+	background: linear-gradient(to bottom, #7fc04e, #55a518);
+}

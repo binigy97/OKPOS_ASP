@@ -21,16 +21,14 @@ public class MemberMngService {
 	
 	public String selectAuthById(String memId) {
 		Integer authNum = memDao.selectAuthById(memId);
+		String auth;
+
+		if (authNum == null) auth = "NULL";
+		else if (authNum == 0) auth = "ADMIN";
+		else if (authNum == 1) auth = "MANAGER";
+		else auth = "USER";
 		
-		if (authNum != null) {
-			switch (authNum) {
-			case 0: return "ADMIN";
-			case 1: return "MANAGER";
-			case 2: return "USER";
-			}
-		}
-		return "NULL";
-		 
+		return auth;
 	}
 	
 }

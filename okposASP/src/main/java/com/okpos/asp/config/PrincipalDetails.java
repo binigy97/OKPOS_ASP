@@ -2,7 +2,6 @@ package com.okpos.asp.config;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -30,6 +29,7 @@ import com.okpos.asp.service.MemberMngService;
 //Security Session 에서 
 // => Authentication 객체를 꺼내고, 그 안에서
 //      => UserDetails 정보를 꺼내면 된다.
+@SuppressWarnings("serial")
 public class PrincipalDetails implements UserDetails {
 	// User Entity
 	private PosmemberDTO user;

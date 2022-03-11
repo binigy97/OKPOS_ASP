@@ -1,0 +1,75 @@
+/* 헤더의 위치/모양 설정 */
+body {
+    margin: 0;
+}
+header {
+    border-bottom: 4px solid #6285ca;
+    background: linear-gradient(to bottom, white, #f3f3f3);
+}
+header > wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    padding-bottom: 5px;
+}
+/* 버튼hover 마우스 모양 변경 */
+header nav.mainMenu ul li:hover, header nav.subMenu ul.sysMenu li:hover {
+    cursor: pointer;
+}
+/* 헤더의 메인 메뉴 */
+header nav.mainMenu li {
+    color: #2a9142;
+    border: 1px solid #2a9142;
+}
+header nav.mainMenu img {
+    margin: 5px 0;
+}
+header nav.mainMenu li div {
+    margin-right: 5px;
+    padding: 0 4px;
+    display: inline-block;
+    color: white;
+    font-weight: 500;
+    font-size: small;
+    border-radius: 3px;
+    background-color: #2a9142;
+}
+/* 헤더의 submenu */
+header nav.subMenu > ul.sysInfo {
+    margin-bottom: 5px;
+    padding: 3px 10px;
+    color: white;
+    font-size: small;
+    border: 1px solid #2a9142;
+    border-radius: 3px;
+    background-color: #69ac37;
+}
+header nav.subMenu > ul.sysInfo > li { 
+    margin: 0 13px;
+}
+header nav.subMenu > ul.sysInfo > li > span {
+    font-weight: bold;
+}
+header nav.subMenu > ul.sysMenu {
+    float: right;
+}
+header nav.subMenu > ul.sysMenu > li.btn {
+    padding: 4px 8px;
+}
+header nav.subMenu > ul.sysMenu > li span {
+    margin-right: 5px;
+}
+/* submenu의 아이콘 */
+header nav.subMenu > ul.sysInfo li .headericon {
+    transform: translateY(2px);
+    width: 15px;
+}
+header nav.subMenu > ul.sysMenu > li.btn .headericon {
+    width: 10px;
+    filter: opacity(0.4) drop-shadow(0 0 0 gray);
+}
+header nav.subMenu > ul.sysMenu > li.btn-gradient-danger .headericon {
+    filter: brightness(0) invert(1);
+    /* brightness(0) : 투명 제외 모두 검정으로 */
+    /* invert(1) : 이미지 색상 반전 */
+}
