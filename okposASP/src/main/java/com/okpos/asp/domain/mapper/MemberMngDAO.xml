@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.okpos.asp.domain.memberMng.MemberMngDAO">
+	<select id="findId" resultType="com.okpos.asp.domain.memberMng.PosmemberDTO">
+		SELECT
+			mem_id memId,
+			mem_pw memPw,
+			mem_auth auth,
+			mem_storeNum storeNum,
+			mem_regdate regdate
+		FROM
+			posMember
+		WHERE
+			mem_id = #{memId}
+	</select>
+	
+	<select id="selectAuthById" resultType="Integer">
+		SELECT mem_auth FROM posmember WHERE mem_id = #{memId}
+	</select>
+	
+	<select id="selectStoreMemberById" resultType="com.okpos.asp.domain.memberMng.StorememberDTO">
+		SELECT
+			storeMem_uid uid,
+			storeMem_regdate regdate
+		FROM
+			storeMember
+		WHERE
+			mem_id = #{memId}
+	</select>
+</mapper>

@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class StorememberDTO {
 	private String uid; // storeMem_uid
-	private String memId; // mem_Id
+	private String memId; // mem_id
 	private LocalDateTime regdate; // storeMem_regdate
 	
 	public String getRegdate() {
