@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.okpos.asp.domain.storeMng.StoreMngDAO">
+	<select id="selectStoreByMemId" resultType="com.okpos.asp.domain.storeMng.StoreDTO">
+		SELECT
+			mem_id			memId,
+			store_name		name,
+			store_type		type,
+			store_openTime	closeTime,
+			store_closeTime closeTime
+		FROM
+			store
+		WHERE
+			mem_id = #{memId}
+	</select>
+	
+	<insert id="insertStore" parameterType="com.okpos.asp.domain.storeMng.StoreDTO"
+	useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO
+			store
+		VALUES(
+			mem_id = #{memId},
+			store_name = #{name},
+			store_type = #{type},
+			store_openTime = #{closeTime},
+			store_closeTime = #{closeTime}
+		)
+	</insert>
+	
+	<update id="updateStoreForBasic">
+		UPDATE
+			store
+		SET
+			store_name		name,
+			store_type		type,
+			store_openTime	closeTime,
+			store_closeTime closeTime
+		WHERE
+			store_id = #{id}
+	</update>
+</mapper>

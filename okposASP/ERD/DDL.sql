@@ -73,6 +73,7 @@ CREATE TABLE docBoard(
 -- 매장정보 테이블
 -- store_type : 0(일반), 1(외식), 2(유통), 3(의류), 4(기타)
 CREATE TABLE store(
+	store_id int NOT NULL AUTO_INCREMENT COMMENT '일련번호',
 	mem_id varchar(100) NOT NULL COMMENT '매장주인',
 	store_name varchar(30) NOT NULL COMMENT '매장이름',
 	store_type int NOT NULL DEFAULT '4' CHECK(store_type IN (0, 4)) COMMENT '매장구분',
