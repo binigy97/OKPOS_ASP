@@ -1,6 +1,12 @@
+:root {
+	--headerGreen: #79bc43;
+}
+
+
 /* 헤더의 위치/모양 설정 */
 body {
     margin: 0;
+    font-size: small;
 }
 header {
     border-bottom: 4px solid #6285ca;
@@ -12,34 +18,63 @@ header > wrapper {
     padding: 10px 30px;
     padding-bottom: 5px;
 }
-/* 버튼hover 마우스 모양 변경 */
-header nav.mainMenu ul li:hover, header nav.subMenu ul.sysMenu li:hover {
-    cursor: pointer;
-}
-/* 헤더의 메인 메뉴 */
-header nav.mainMenu li {
-    color: #2a9142;
-    border: 1px solid #2a9142;
-}
+/* 헤더의 메인 메뉴 : 오른쪽 */
 header nav.mainMenu img {
     margin: 5px 0;
 }
-header nav.mainMenu li div {
-    margin-right: 5px;
-    padding: 0 4px;
+header nav.mainMenu .dropdown {
+	border: none;
+}
+header nav.mainMenu .dropdown-title {
+    color: var(--headerGreen);
+    color: #2a9142;
+    border: 1px solid var(--headerGreen);
+    border: 1px solid #2a9142;
+}
+header nav.mainMenu .dropdown-item.btn {
+	color: var(--headerGreen);
+	color: #2a9142;
+	border: none;
+	border-radius: 0;
+}
+nav.mainMenu .dropdown-item.dropdown.btn {
+	padding: 0;
+}
+nav.mainMenu .dropdown-item, nav.mainMenu .dropdown-item.dropdown.btn > .dropdown-title {
+	padding: 5px 10px 6px 10px;
+}
+.dropdown-item.dropdown:hover .dropdown-content-right {
+	transform: translateY(-30px);
+}
+nav.mainMenu .dropdown-item.dropdown .dropdown-item {
+	width: 150px;
+}
+nav.mainMenu .icon_num {
     display: inline-block;
+    transform: translateY(-1px);
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
     color: white;
     font-weight: 500;
-    font-size: small;
+    font-size: 5px;
+    text-align: center;
     border-radius: 3px;
+    background-color: var(--headerGreen);
     background-color: #2a9142;
 }
-/* 헤더의 submenu */
+nav.mainMenu .dropdown-title:hover .icon_num, nav.mainMenu .dropdown-item.dropdown .dropdown-item:hover .icon_num {
+	color: var(--headerGreen);
+    color: #2a9142;
+    background-color: white;
+}
+/* 헤더의 submenu : 왼쪽 */
 header nav.subMenu > ul.sysInfo {
     margin-bottom: 5px;
     padding: 3px 10px;
     color: white;
     font-size: small;
+    border: 1px solid var(--headerGreen);
     border: 1px solid #2a9142;
     border-radius: 3px;
     background-color: #69ac37;

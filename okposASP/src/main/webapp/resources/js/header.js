@@ -1,15 +1,7 @@
 $(function(){
-	setLiveTime("#nowDateTime");
+	// 실시간 현재 시간 표시
+	setLiveTime("#nowDateTime");	
 });
-
-// 헤더의 메인메뉴 hover css 추가
-function headerMainmenuHover() {
-    var targetColor = $(this).children('div').css('color');
-    var targetBgc = $(this).children('div').css('background-color');
-    $(this).children('div').css('color', targetBgc);
-    $(this).children('div').css('background-color', targetColor);
-};
-$('header nav.mainMenu .btn').hover(headerMainmenuHover, headerMainmenuHover);
 
 // 실시간 현재 시간 표시
 function setLiveTime(targetId) {

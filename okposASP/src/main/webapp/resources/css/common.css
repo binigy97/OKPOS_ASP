@@ -22,13 +22,16 @@ ul.collapse-list {
 .table-cell {
 	display: table-cell;
 }
+.flex {
+	display: flex;
+}
 .vertical-align-middle {
 	vertical-align: middle;
 }
 
+/* 버튼 */
 .btn {
 	padding: 5px 10px;
-	font-size: small;
 	color: black;
 	border: 1px solid gray;
 	border-radius: 3px;
@@ -58,4 +61,49 @@ ul.collapse-list {
 	color: white;
 	border: 1px solid #53a019;
 	background: linear-gradient(to bottom, #7fc04e, #55a518);
+}
+
+/* 드롭다운 */
+.dropdown {
+	display : inline-block;
+}
+.dropdown-title {
+	padding: 5px 10px;
+	border: 1px solid gray;
+	border-radius: 3px;
+}
+.dropdown-item.dropdown .dropdown-title {
+	padding: 0;
+	border: none;
+}
+.dropdown-title, .dropdown-item {
+	color: black;
+	background-color: white;
+}
+.dropdown-content, .dropdown-content-right {
+	display: none;
+	position: absolute;
+	z-index : 1;
+	border: 1px solid gray;
+	border-radius: 3px;
+	box-shadow: 3px 3px 2px #00000050;
+}
+ul.dropdown-content, ul.dropdown-content-right {
+	margin: 0;
+	padding: 0;
+}
+.dropdown:hover .dropdown-content, .dropdown-item.dropdown:hover .dropdown-content-right {
+	display: block;
+}
+.dropdown-item.dropdown:hover .dropdown-content-right {
+	left: 100%;
+/* 	transform: translateY(-21px); //js로 계산해서 맞추든 해야되는데 방법을 몰라.. */
+}
+.dropdown-item {
+	display: block;
+	padding: 1px 10px 4px 10px;
+	border-bottom: 1px solid #ddd;
+}
+.dropdown-item:last-child {
+	border-bottom: none;
 }

@@ -11,4 +11,10 @@ public class HomeController {
 		return "login.jsp";
 	}
 	
+	// 기획에서 구현 범위에 포함되지 않은 페이지
+	@RequestMapping({"/remote", "/favorite"})
+	public String remote() {
+		return "notExist.html";
+	}
+	
 }
