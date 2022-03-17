@@ -25,6 +25,12 @@ ul.collapse-list {
 .flex {
 	display: flex;
 }
+.justify-content-between {
+	justify-content: space-between;
+}
+.justify-content-center {
+	justify-content: center;
+}
 .vertical-align-middle {
 	vertical-align: middle;
 }

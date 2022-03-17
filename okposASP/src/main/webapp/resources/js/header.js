@@ -1,25 +1,18 @@
 $(function(){
 	// 실시간 현재 시간 표시
-	setLiveTime("#nowDateTime");	
+	setLiveTime("#nowDateTime");
 });
 
 // 실시간 현재 시간 표시
 function setLiveTime(targetId) {
 	var date = new Date();
-	var nowDate = "";
-	var nowTime = "";
 	
-	// String.slice(-2) : 문자열을 뒤에서 2개 자름
-	//nowDate += date.getFullYear() + "-";
-	nowDate += ("0" + (date.getMonth() + 1)).slice(-2) + "-";
-	nowDate += ("0" + date.getDate()).slice(-2);
+	$.getScript("resources/js/FormattingDate.js", function(){
+		var d = getFormattingCurrentDate(date).slice(-5); // MM-dd 형식을 위해 뒤에 5개 문자만 추출
+		var t = getFormattingCurrentTime(date);
+		$(targetId).text(d + " " + t);	
+	});
 	
-	nowTime += ("0" + date.getHours()).slice(-2) + ":";
-	nowTime += ("0" + date.getMinutes()).slice(-2) + ":";
-	nowTime += ("0" + date.getSeconds()).slice(-2);
-	
-	$(targetId).text(nowDate + " " + nowTime);
-	
-	// setTimeout(func, msec, funcArg) : msec초마다 func 호출(함수의 인자는 3번째 매개변수 이후에 ,로 나열)
-	setTimeout(setLiveTime, 1000, targetId);
+	// setTimeout(() => {func}, msec) : msec 후 func 호출
+	setTimeout(() => {setLiveTime(targetId)}, 1000);
 }

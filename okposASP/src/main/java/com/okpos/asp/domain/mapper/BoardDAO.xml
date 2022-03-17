@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.okpos.asp.domain.board.BoardDAO">
+	<select id="selectSysboard" resultType="com.okpos.asp.domain.board.SysBoardDTO">
+		SELECT
+			sysb_id id,
+			mem_id memId,
+			sysb_title title,
+			sysb_regdate regdate
+		FROM
+			sysboard
+		ORDER BY
+			sysb_regdate DESC
+		LIMIT 7;
+	</select>
+	
+	<select id="selectBookboard" resultType="com.okpos.asp.domain.board.BookBoardDTO">
+		SELECT
+			bkb_id id,
+			mem_id memId,
+			bkb_title title,
+			bkb_startDate startday,
+			bkb_endDate endday,
+			bkb_regdate regdate
+		FROM
+			bookBoard
+		ORDER BY
+			bkb_regdate DESC
+		LIMIT 5;
+	</select>
+	
+	<select id="selectDocboard" resultType="com.okpos.asp.domain.board.DocBoardDTO">
+		SELECT
+			docb_id id,
+			mem_id memId,
+			docb_title title,
+			docb_regdate regdate
+		FROM
+			docBoard
+		ORDER BY
+			docb_regdate DESC
+		LIMIT 5;
+	</select>
+</mapper>

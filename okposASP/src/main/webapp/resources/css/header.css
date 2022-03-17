@@ -2,6 +2,9 @@
 	--headerGreen: #79bc43;
 }
 
+a {
+	text-decoration: none;
+}
 
 /* 헤더의 위치/모양 설정 */
 body {

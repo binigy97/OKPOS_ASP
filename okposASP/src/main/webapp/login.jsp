@@ -21,12 +21,12 @@
         </ul>
         <hr style="border:thin dashed #e3e3e3;">
         <form name="login" action="/loginOk" method="post">
-            <ul class="collapse-list table">
-                <li class="table-cell">
+            <ul class="collapse-list flex">
+                <li>
                     <input type="text" name="memId" placeholder="아이디">
                     <input type="password" name="memPw" placeholder="패스워드">
                 </li>
-                <li class="table-cell">
+                <li>
                     <input type="submit" value="로그인">
                 </li>
             </ul>

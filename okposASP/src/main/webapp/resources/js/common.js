@@ -1,3 +1,7 @@
+$(function(){
+	$('.btn.btn-disabled').off('mouseenter mouseleave');
+});
+
 // 기본 버튼 hover
 function switchColorBgc() {
     var currentColor = $(this).css('color');

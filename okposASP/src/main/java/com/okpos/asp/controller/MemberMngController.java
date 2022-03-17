@@ -18,19 +18,4 @@ public class MemberMngController {
 		this.memberMngService = memberMngService;
 	}
 	
-	@RequestMapping("/index")
-	public String home(@SessionAttribute("userid") String memId, Model model) {
-		String auth = memberMngService.selectAuthById(memId);
-		model.addAttribute("memId", memId);
-		
-		if (auth != null) {
-			switch(auth) {
-			case "ADMIN": return "notExist.html";
-			case "MANAGER": return "mngIndex.jsp";
-			case "USER": return "userIndex.jsp";
-			}
-		}
-		return "page404.html";
-	}
-	
 }
