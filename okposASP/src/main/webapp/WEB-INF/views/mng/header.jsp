@@ -7,11 +7,11 @@
             <ul class="collapse-list">
                 <li class="dropdown">
                 	<!-- 시스템관리 -->
-                	<div class="dropdown-title btn"><div class="icon_num">1</div>시스템관리</div>
+                	<div class="dropdown-title btn" style="color: red;"><div class="icon_num">1</div>시스템관리</div>
 	                <div class="dropdown-content">
 	                	<a class="dropdown-item btn"><div class="icon_num">1</div>POS버전관리</a>
 	                	<div class="dropdown-item dropdown btn">
-	                		<div class="dropdown-title btn">
+	                		<div class="dropdown-title btn" style="color: red;">
 	                			<div class="icon_num">2</div>본사마스터
 	                			<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16" style="margin-left: 30px">
 									<path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
@@ -22,7 +22,7 @@
 			                	<a class="dropdown-item btn"><div class="icon_num">2</div>매장정보관리</a>
 			                	<a class="dropdown-item btn"><div class="icon_num">3</div>매장정보조회</a>
 			                	<a class="dropdown-item btn"><div class="icon_num">4</div>정보변경확인</a>
-			                	<a class="dropdown-item btn" href="location.href='/mng/store'"><div class="icon_num">5</div>매장환경설정</a>
+			                	<a class="dropdown-item btn" href="/sys/hoMaster/env" style="color: red;"><div class="icon_num">5</div>매장환경설정</a>
 			                </div>
 	                	</div>
 	                </div>

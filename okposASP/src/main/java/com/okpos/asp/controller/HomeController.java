@@ -72,7 +72,7 @@ public class HomeController {
 		// redirect view page
 		if (auth != null) {
 			switch(auth) {
-			case "ADMIN": return "notExist.html";
+			case "ADMIN": return "notExist.jsp";
 			case "MANAGER":
 				List<SysBoardDTO> sdto = boardService.selectSysboard();
 				List<BookBoardDTO> bdto = boardService.selectBookboard();
@@ -82,11 +82,11 @@ public class HomeController {
 				model.addAttribute("bookBoard", bdto);
 				model.addAttribute("docBoard", ddto);
 				
-				return "mngIndex.jsp";
-			case "USER": return "notExist.html";
+				return "mng/index.jsp";
+			case "USER": return "user/index.jsp";
 			}
 		}
-		return "page404.html";
+		return "page404.jsp";
 	}
 	
 	// weather.js에서 해당 메서드로 redirect -> session에 data 담아서 index redirect

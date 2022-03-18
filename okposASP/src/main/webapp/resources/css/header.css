@@ -71,6 +71,10 @@ nav.mainMenu .dropdown-title:hover .icon_num, nav.mainMenu .dropdown-item.dropdo
     color: #2a9142;
     background-color: white;
 }
+nav.mainMenu svg {
+	float: right;
+	transform: translateY(4px);
+}
 /* 헤더의 submenu : 왼쪽 */
 header nav.subMenu > ul.sysInfo {
     margin-bottom: 5px;
