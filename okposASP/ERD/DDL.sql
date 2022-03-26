@@ -139,11 +139,31 @@ CREATE TABLE outProduct (
 -- 회원 생성
 insert into posmember values('root', '{noop}1234', 0, '123-45-67890', sysdate());
 insert into posmember values('manager', '{noop}1234', 1, '111-22-33333', sysdate());
+insert into posMember values('manage', '{noop}1234', 1, '123-46-12345', now());
 insert into posmember values('user', '{noop}1234', 2, '333-22-55555', sysdate());
+insert into posmember values('user1', '{noop}1234', 2, '333-22-44444', sysdate());
+insert into posmember values('user2', '{noop}1234', 2, '333-22-33333', sysdate());
 
 -- 매장별회원 생성
 insert into storeMember values('customer1', 'user', sysdate());
 insert into storeMember values('customer2', 'user', sysdate());
+
+-- 보유상품 생성
+insert into product values('a001', 'user', '제품a1', 1000, 3);
+insert into product values('a002', 'user', '제품a2', 500, 3);
+insert into product values('b001', 'user1', '제품b1', 1000, 3);
+insert into product values('c001', 'user2', '제품c1', 1000, 3);
+
+-- 주문서 생성
+insert into posorder values(1, 'user', 'customer1', 'a001', 1, DATE_SUb(sysdate(), interval 4 DAY), 0);
+insert into posorder values(2, 'user', 'customer2', 'a001', 3, DATE_SUb(sysdate(), interval 2 DAY), 0);
+insert into posorder values(3, 'user', 'customer1', 'a002', 2, DATE_SUb(sysdate(), interval 1 DAY), 0);
+insert into posorder values(4, 'user1', 'customer2', 'b001', 2, DATE_SUb(sysdate(), interval 4 DAY), 0);
+insert into posorder values(5, 'user1', 'customer1', 'b001', 1, sysdate(), 0);
+insert into posorder values(6, 'user2', 'customer2', 'c001', 2, DATE_SUb(sysdate(), interval 3 DAY), 0);
+insert into posorder values(7, 'user2', 'customer2', 'c001', 1, DATE_SUb(sysdate(), interval 1 DAY), 0);
+insert into posorder values(8, 'user', 'customer2', 'a001', 1, sysdate(), 0);
+insert into posorder values(9, 'user', 'customer2', 'a001', 1, sysdate(), 0);
 
 -- 시스템 전용 게시판 : 게시물 생성
 insert into sysBoard values(1, 'root', '[OKPos Classic (NetPOS) - 구형MSR,단말기연동버전] 2015-03-12 설치파일 입니다.(NOCVM 적용)', now());
@@ -169,4 +189,3 @@ insert into docBoard values(4, 'root', '[드라이버] I,Z,ZED-POS(J1900)TXE DRI
 insert into docBoard values(5, 'root', 'Optimus 사용자 매뉴얼', sysdate());
 insert into docBoard values(6, 'root', 'KIS-BTPR 제품안내서', sysdate());
 
-SELECT * FROM posmember ORDER BY mem_regdate DESC;

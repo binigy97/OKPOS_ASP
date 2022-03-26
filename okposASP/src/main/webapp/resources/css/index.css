@@ -89,19 +89,77 @@
 	color: red;
 }
 
-/* 매장정보 표 설정 */
+/* --------------------------------- */
+/* 매장정보, 기타정보 표 설정 */
 .indexPage > .partition-wrapper:last-child .partition:first-child {
     margin-right: 0;
 }
-.partition-body #storeInfo {
+.indexPage > .partition-wrapper:last-child .partition-body table {
 	margin-top: 10px;
 	width: 100%;
 	text-align: center;
 	border-collapse: collapse;
 }
-.partition-body #storeInfo td {
+.indexPage > .partition-wrapper:last-child .partition-body table td {
 	border: 1px solid darkgray;
 }
 .partition-body #storeInfo tr:first-child td, .partition-body #storeInfo tr:nth-child(2) td {
 	background-color: #f0f0f0;
+}
+.partition-body #etcInfo tr:first-child td {
+	background-color: #f0f0f0;
+}
+
+/* 매출분석 */
+.partition#saleAnalysis {
+	margin-right: 0;
+}
+.partition#saleAnalysis .partition-header > .btn.btn-gradient-greentea {
+	width: 100%;
+}
+.partition#saleAnalysis .partition-header ul {
+	float: right;
+	margin: 0;
+}
+.partition#saleAnalysis .partition-header ul, .partition#saleAnalysis .partition-header ul li {
+	display: inline-block;
+}
+.partition#saleAnalysis .partition-header ul li > input.active {
+	color: white;
+	border: 1px solid white;
+	background-color: #0075ff;
+}
+.partition#saleAnalysis .partition-body {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid darkgray;
+}
+.partition#saleAnalysis .partition-body #saleAnalysisGraph {
+	margin: 5px;
+	padding: 25px 40px 25px 30px;
+	width: 70%;
+	border: 1px solid gray;
+	background-color: #f0f0f0;
+}
+.partition#saleAnalysis .partition-body #saleAnalysisGraph > canvas {
+	max-height: 245px;	/* doughnut 크기에 관여 */
+}
+.partition#saleAnalysis .partition-body .saleAnalysisTable-wrapper {
+	max-height: 245px;
+	overflow-y: scroll;
+}
+.partition#saleAnalysis .partition-body #saleAnalysisTable {
+	margin: 5px;
+	text-align: center;
+	border-collapse: collapse;
+}
+.partition#saleAnalysis .partition-body #saleAnalysisTable td {
+	border: 1px solid darkgray;
+}
+.partition#saleAnalysis .partition-body #saleAnalysisTable tr:first-child td {
+	background-color: #f0f0f0;
+}
+.partition#saleAnalysis .partition-body #saleAnalysisTable tr:nth-child(n+2) td:last-child {
+	padding-right: 5px;
+	text-align: right;
 }

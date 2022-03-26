@@ -1,6 +1,5 @@
 package com.okpos.asp.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,15 +17,16 @@ import com.okpos.asp.domain.api.WeatherAjaxDTO;
 import com.okpos.asp.domain.board.BookBoardDTO;
 import com.okpos.asp.domain.board.DocBoardDTO;
 import com.okpos.asp.domain.board.SysBoardDTO;
+import com.okpos.asp.domain.productMng.SaleAnalysisDTO;
 import com.okpos.asp.service.BoardService;
 import com.okpos.asp.service.MemberMngService;
-import com.okpos.asp.service.StoreMngService;
+import com.okpos.asp.service.ProductMngService;
 
 @Controller
 public class HomeController {
 	
 	private MemberMngService memberMngService;
-	private StoreMngService storeMngService;
+	private ProductMngService productMngService;
 	private BoardService boardService;
 
 	@Autowired
@@ -35,8 +35,8 @@ public class HomeController {
 	}
 
 	@Autowired
-	public void setStoreMngService(StoreMngService storeMngService) {
-		this.storeMngService = storeMngService;
+	public void setProductMngService(ProductMngService productMngService) {
+		this.productMngService = productMngService;
 	}
 	
 	@Autowired
@@ -83,7 +83,20 @@ public class HomeController {
 				model.addAttribute("docBoard", ddto);
 				
 				return "mng/index.jsp";
-			case "USER": return "user/index.jsp";
+			case "USER":
+				List<SysBoardDTO> sdto2 = boardService.selectSysboard();
+				List<SaleAnalysisDTO> sadtoRegdate = productMngService.selectSaleAnalysisRegdateBymemId(memId);
+				List<SaleAnalysisDTO> sadtoCode = productMngService.selectSaleAnalysisCodeBymemId(memId);
+				List<SaleAnalysisDTO> sadtoWeek = productMngService.selectSaleAnalysisWeekBymemId(memId);
+				List<SaleAnalysisDTO> sadtoMonth = productMngService.selectSaleAnalysisMonthBymemId(memId);
+				
+				model.addAttribute("sysBoard", sdto2);
+				model.addAttribute("saBoardRegdate", sadtoRegdate);
+				model.addAttribute("saBoardCode", sadtoCode);
+				model.addAttribute("saBoardWeek", sadtoWeek);
+				model.addAttribute("saBoardMonth", sadtoMonth);
+				
+				return "user/index.jsp";
 			}
 		}
 		return "page404.jsp";

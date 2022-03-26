@@ -47,4 +47,19 @@ public interface ProductMngDAO {
 	
 	// 출고삭제
 	public abstract int deleteOutprod(int id); // out_id
+	
+	// 매출분석 : 특정 사용자의 매출일별 매출액
+	public abstract List<SaleAnalysisDTO> selectSaleAnalysisRegdateBymemId(String memId); // mem_id
+
+	// 특정 사용자의 보유 상품 조회
+	public abstract List<SaleAnalysisDTO> selectCodeNameBymemId(String memId); // mem_id
+	
+	// 매출분석 : 특정 사용자의 상품코드별 매출액
+	public abstract List<SaleAnalysisDTO> selectSaleAnalysisCodeBymemId(String memId); // mem_id
+	
+	// 매출분석 : 특정 사용자의 요일별 매출액
+	public abstract List<SaleAnalysisDTO> selectSaleAnalysisWeekBymemId(String memId); // mem_id	
+	
+	// 매출분석 : 특정 사용자의 월별 매출액
+	public abstract List<SaleAnalysisDTO> selectSaleAnalysisMonthBymemId(String memId); // mem_id	
 }

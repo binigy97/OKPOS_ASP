@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/resources/css/common.css">
     <link rel="stylesheet" href="/resources/css/header.css">
     <link rel="stylesheet" href="/resources/css/okposBodyBoundary.css">
-    <link rel="stylesheet" href="/resources/css/mngIndex.css">
+    <link rel="stylesheet" href="/resources/css/index.css">
 </head>
 <body>
 <!-- header -->

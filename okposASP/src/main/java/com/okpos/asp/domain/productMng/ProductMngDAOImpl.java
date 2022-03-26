@@ -91,4 +91,28 @@ public class ProductMngDAOImpl implements ProductMngDAO {
 		return mapper.deleteOutprod(id);
 	}
 
+	@Override
+	public List<SaleAnalysisDTO> selectSaleAnalysisRegdateBymemId(String memId) {
+		return mapper.selectSaleAnalysisRegdateBymemId(memId);
+	}
+
+	@Override
+	public List<SaleAnalysisDTO> selectCodeNameBymemId(String memId) {
+		return mapper.selectCodeNameBymemId(memId);
+	}
+	
+	@Override
+	public List<SaleAnalysisDTO> selectSaleAnalysisCodeBymemId(String memId) {
+		return mapper.selectSaleAnalysisCodeBymemId(memId);
+	}
+	
+	@Override
+	public List<SaleAnalysisDTO> selectSaleAnalysisWeekBymemId(String memId) {
+		return mapper.selectSaleAnalysisWeekBymemId(memId);
+	}
+	
+	@Override
+	public List<SaleAnalysisDTO> selectSaleAnalysisMonthBymemId(String memId) {
+		return mapper.selectSaleAnalysisMonthBymemId(memId);
+	}
 }

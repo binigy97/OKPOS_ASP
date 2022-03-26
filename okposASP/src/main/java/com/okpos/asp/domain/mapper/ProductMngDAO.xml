@@ -178,4 +178,98 @@
 		WHERE
 			out_id = #{id}
 	</delete>
+	
+	<select id="selectSaleAnalysisRegdateBymemId" resultType="com.okpos.asp.domain.productMng.SaleAnalysisDTO" parameterType="string">
+		SELECT
+			DATE_FORMAT(posOrder_regdate, "%Y-%m-%d") regdate,
+			DATE_FORMAT(posOrder_regdate, "%w") week,
+			sum(posOrder_num * p.prod_money) money
+		FROM
+			posorder o
+		Join
+			product p
+		ON
+			o.prod_code = p.prod_code
+		WHERE
+			o.mem_id = #{memId}
+			AND
+			o.posOrder_regdate BETWEEN DATE_SUB(sysdate(), INTERVAL 8 DAY) AND sysdate()
+		GROUP BY
+			DATE_FORMAT(posOrder_regdate, "%Y-%m-%d")
+		ORDER BY
+			posOrder_regdate DESC
+	</select>
+	
+	<select id="selectCodeNameBymemId" resultType="com.okpos.asp.domain.productMng.SaleAnalysisDTO" parameterType="string">
+		SELECT
+			prod_code code,
+			prod_name name
+		FROM
+			product
+		WHERE
+			mem_id = #{memId}
+		ORDER BY
+			prod_code ASC
+	</select>
+	
+	<select id="selectSaleAnalysisCodeBymemId" resultType="com.okpos.asp.domain.productMng.SaleAnalysisDTO" parameterType="string">
+		SELECT
+			p.prod_code code,
+			p.prod_name name,
+			sum(o.posOrder_num * p.prod_money) money
+		FROM
+			posorder o
+		JOIN
+			product p
+		ON
+			o.prod_code = p.prod_code
+		WHERE
+			o.mem_id = #{memId}
+			AND
+			o.posOrder_regdate BETWEEN DATE_SUB(sysdate(), INTERVAL 8 DAY) AND sysdate()
+		GROUP BY
+			o.prod_code
+		ORDER BY
+			p.prod_code ASC
+	</select>
+	
+	<select id="selectSaleAnalysisWeekBymemId" resultType="com.okpos.asp.domain.productMng.SaleAnalysisDTO" parameterType="string">
+		SELECT 
+			date_format(posOrder_regdate, "%w") weeks,
+			sum(posOrder_num * prod_money) money
+		FROM
+			posorder o
+		JOIN 
+			product p
+		ON 
+			o.prod_code = p.prod_code
+		WHERE
+			o.mem_id = #{memId}
+			AND 
+			posOrder_regdate BETWEEN date_sub(sysdate(), INTERVAL 4 week) AND sysdate()
+		GROUP BY 
+			weeks
+		ORDER BY 
+			weeks ASC
+	</select>
+	
+	<select id="selectSaleAnalysisMonthBymemId" resultType="com.okpos.asp.domain.productMng.SaleAnalysisDTO" parameterType="string">
+		SELECT 
+			date_format(posOrder_regdate, "%m") month,
+			sum(posOrder_num * prod_money) money
+		FROM
+			posorder o
+		JOIN 
+			product p
+		ON 
+			o.prod_code = p.prod_code
+		WHERE
+			o.mem_id = #{memId}
+			AND 
+			posOrder_regdate BETWEEN MAKEDATE(YEAR(sysdate()),01) AND MAKEDATE(YEAR(sysdate()),365)
+		GROUP BY 
+			month
+		ORDER BY 
+			month ASC
+	</select>
 </mapper>
