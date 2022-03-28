@@ -3,7 +3,10 @@
 <header>
     <wrapper>
         <nav class="mainMenu">
-            <img src="/resources/img/logo.png" style="width: 110px;">
+        	<div>
+	            <img src="/resources/img/logo.png" style="width: 110px;">
+	            <h3 style="display: inline-block; margin: 0; transform: translateY(-8px);">영업정보시스템</h3>
+        	</div>
             <ul class="collapse-list">
                 <li class="dropdown">
                 	<!-- 기초관리 -->
