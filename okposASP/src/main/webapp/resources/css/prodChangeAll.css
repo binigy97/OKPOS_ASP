@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+body#prodChangeAll .mainMenu-wrap .mainMenu-body .table-wrap .tableY-scroll {
+	max-height: 630px;
+}
+.mainMenu-wrap .mainMenu-body .table-wrap table.table tr:nth-child(n+2) td:first-child {
+	text-align: center;
+	background-color: white;
+}
+.mainMenu-wrap .mainMenu-body .table-wrap table.table tr:nth-child(n+2) td:nth-child(2),
+.mainMenu-wrap .mainMenu-body .table-wrap table.table tr:nth-child(n+2) td:nth-last-child(3) {
+	text-align: center;	
+}
+.mainMenu-wrap .mainMenu-body .table-wrap table.table tr:nth-child(n+2) td:nth-last-child(2) {
+	text-align: right;	
+}
+.mainMenu-wrap .mainMenu-body .table-wrap table.table tr:nth-child(n+2) td:last-child {
+	text-align: right;
+	background-color: white;
+}

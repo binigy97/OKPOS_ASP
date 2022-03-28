@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="/resources/css/common.css">
 	<link rel="stylesheet" href="/resources/css/header.css">
 	<link rel="stylesheet" href="/resources/css/okposBodyBoundary.css">
+	<link rel="stylesheet" href="/resources/css/sub.css">
 	<link rel="stylesheet" href="/resources/css/hoMasterEnv.css">
 </head>
 <body>
@@ -99,7 +100,7 @@
 					<li id="store-name">쥬시(가산하이앤드점)</li>
 				</ul>
 			</nav>
-			<nav class="mainMenu-menu">
+			<nav class="pill">
 				<ul class="collapse-list">
 					<li class="">외식환경</li>
 					<li class="">매장환경</li>
@@ -109,7 +110,7 @@
 					<li class="">주방프린터-상품연결</li>
 				</ul>
 			</nav>
-			<nav class="mainMenu-menu">
+			<nav class="pill">
 				<ul class="collapse-list">
 					<li class="active">포스기능 사용관리</li>
 					<li class="">포스기능 인증관리</li>
