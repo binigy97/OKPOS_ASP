@@ -57,9 +57,11 @@ public class HomeController {
 	
 	@RequestMapping("/index")
 	public String home(@SessionAttribute("userid") String memId, HttpServletRequest request, Model model) {
+		// login user id
+		model.addAttribute("memId", memId);
+		
 		// get authority for view page
 		String auth = memberMngService.selectAuthById(memId);
-		model.addAttribute("memId", memId);
 		
 		// Open Weather Map API data
 		HttpSession session = request.getSession();

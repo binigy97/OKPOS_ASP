@@ -1,3 +1,6 @@
+:root {
+	--okpos-gray : #f0f0f0;
+}
 /* 본문에서 파티션 배열 설정 */
 .indexPage > .partition-wrapper {
     display: flex;
@@ -67,6 +70,7 @@
 }
 .partition-body #weather li:last-child {
 	text-align: left;
+	background-color: var(--okpos-gray);
 	background-color: #f0f0f0;
 }
 .partition-body #weather ul:nth-child(2n) li {
@@ -104,9 +108,11 @@
 	border: 1px solid darkgray;
 }
 .partition-body #storeInfo tr:first-child td, .partition-body #storeInfo tr:nth-child(2) td {
+	background-color: var(--okpos-gray);
 	background-color: #f0f0f0;
 }
 .partition-body #etcInfo tr:first-child td {
+	background-color: var(--okpos-gray);
 	background-color: #f0f0f0;
 }
 
@@ -139,6 +145,7 @@
 	padding: 25px 40px 25px 30px;
 	width: 70%;
 	border: 1px solid gray;
+	background-color: var(--okpos-gray);
 	background-color: #f0f0f0;
 }
 .partition#saleAnalysis .partition-body #saleAnalysisGraph > canvas {
@@ -157,6 +164,7 @@
 	border: 1px solid darkgray;
 }
 .partition#saleAnalysis .partition-body #saleAnalysisTable tr:first-child td {
+	background-color: var(--okpos-gray);
 	background-color: #f0f0f0;
 }
 .partition#saleAnalysis .partition-body #saleAnalysisTable tr:nth-child(n+2) td:last-child {
