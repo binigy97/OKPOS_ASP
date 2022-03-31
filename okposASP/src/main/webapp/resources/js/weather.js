@@ -36,7 +36,7 @@ $(function(){
 			
 			// controller로 결과 전송
 			$.ajax({
-		        url: "redirect:/weatherAjax"
+		        url: "/weatherAjax"
 		        ,type:"post"
 				,dateType : "json"
 		        ,data: JSON.stringify(weather)
